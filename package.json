@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "dev:server": "node --watch server/index.js",
-    "build": "tsc -b && vite build",
-    "start": "node server/index.js",
-    "preview": "vite preview"
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -b",
+    "start": "npm run start:server && npm run start:client",
+    "start:server": "node server/index.js",
+    "start:client": "vite preview",
+    "setup": "npm install && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
