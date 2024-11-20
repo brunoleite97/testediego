@@ -12,4 +12,13 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+  },
+  server: {
+    port: Number(process.env.PORT) || 3000,
+    host: true,
+  },
 });

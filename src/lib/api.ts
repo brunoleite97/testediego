@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+const API_URL = process.env.NODE_ENV === 'production' 
+  ? '/api' 
+  : 'http://localhost:3000';
+
 export const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: API_URL,
 });
 
 api.interceptors.request.use((config) => {
