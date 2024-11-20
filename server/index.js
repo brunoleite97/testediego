@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/scheduling-system');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongo:Bleite1997@guaca_agendador:27017');
 
 app.use('/auth', authRoutes);
 app.use('/appointments', appointmentRoutes);
